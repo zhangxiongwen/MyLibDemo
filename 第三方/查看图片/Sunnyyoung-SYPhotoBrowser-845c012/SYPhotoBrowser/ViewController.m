@@ -75,7 +75,6 @@
 {
     // 不建议用此种方式获取小图，这里只是为了简单实现展示而已
     CollectionViewCell *cell = (CollectionViewCell *)[self collectionView:self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
-    
     return cell.imageView.image;
     
 }
