@@ -17,10 +17,6 @@
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     [SYNetworkConfig sharedInstance].baseURL = BaseURL;
     
-    //Set SVProgressHUD
-    [SVProgressHUD setBackgroundColor:[UIColor colorWithWhite:0.0 alpha:0.9]];
-    [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
-    
     return YES;
 }
 

@@ -87,7 +87,7 @@
         [self.collectionView.mj_header endRefreshing];
         [self reloadDataWithMeiziArray:meiziArray emptyBeforeReload:YES];
     } failure:^(NSString *message) {
-        [SVProgressHUD showWithStatus:message];
+        [SVProgressHUD showErrorWithStatus:message];
         [self.collectionView.mj_header endRefreshing];
     }];
 }
@@ -97,7 +97,7 @@
         [self.collectionView.mj_footer endRefreshing];
         [self reloadDataWithMeiziArray:meiziArray emptyBeforeReload:NO];
     } failure:^(NSString *message) {
-        [SVProgressHUD showWithStatus:message];
+        [SVProgressHUD showErrorWithStatus:message];
         [self.collectionView.mj_footer endRefreshing];
     }];
 }

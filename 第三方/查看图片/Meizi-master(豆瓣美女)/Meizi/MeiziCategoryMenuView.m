@@ -19,7 +19,7 @@
     self.borderType = HMSegmentedControlBorderTypeBottom;
     self.borderColor = [UIColor lightGrayColor];
     self.borderWidth = 0.3;
-    self.alpha = 0.9;
+    self.alpha = 0.95;
     self.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor blackColor], NSFontAttributeName: [UIFont systemFontOfSize:14.0]};
     self.selectedTitleTextAttributes = @{NSForegroundColorAttributeName:[UIColor redColor], NSFontAttributeName: [UIFont boldSystemFontOfSize:17.0]};
 }

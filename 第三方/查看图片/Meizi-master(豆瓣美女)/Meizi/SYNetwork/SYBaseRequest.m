@@ -45,7 +45,7 @@
 }
 
 - (NSTimeInterval)requestTimeoutInterval {
-    return 20.0;
+    return 15.0;
 }
 
 - (id)jsonObjectValidator {

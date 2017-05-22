@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1E7640931594AFCAB0916F13 /* Pods_Meizi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E22DBEA73CE361DFD593DA31 /* Pods_Meizi.framework */; };
+		480F81D71ECADAE700A1FE99 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 480F81D41ECADAE700A1FE99 /* SVProgressHUD.bundle */; };
+		480F81D81ECADAE700A1FE99 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 480F81D61ECADAE700A1FE99 /* SVProgressHUD.m */; };
 		48C780291EC43EFC002E0092 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C780281EC43EFC002E0092 /* HMSegmentedControl.m */; };
 		48C780321EC4403C002E0092 /* SDBrowserImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C7802C1EC4403C002E0092 /* SDBrowserImageView.m */; };
 		48C780331EC4403C002E0092 /* SDPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C7802E1EC4403C002E0092 /* SDPhotoBrowser.m */; };
@@ -39,6 +41,9 @@
 
 /* Begin PBXFileReference section */
 		3C9EAFCE704385C25D809FBC /* Pods-Meizi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meizi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Meizi/Pods-Meizi.release.xcconfig"; sourceTree = "<group>"; };
+		480F81D41ECADAE700A1FE99 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		480F81D51ECADAE700A1FE99 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		480F81D61ECADAE700A1FE99 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		48C780271EC43EFC002E0092 /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		48C780281EC43EFC002E0092 /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
 		48C7802B1EC4403C002E0092 /* SDBrowserImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDBrowserImageView.h; sourceTree = "<group>"; };
@@ -118,6 +123,16 @@
 				E22DBEA73CE361DFD593DA31 /* Pods_Meizi.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		480F81D31ECADAE700A1FE99 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				480F81D41ECADAE700A1FE99 /* SVProgressHUD.bundle */,
+				480F81D51ECADAE700A1FE99 /* SVProgressHUD.h */,
+				480F81D61ECADAE700A1FE99 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 		48C780261EC43EFC002E0092 /* HMSegmentedControl */ = {
@@ -314,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				7D93B8761ACFDA1F00453452 /* Constant.h */,
+				480F81D31ECADAE700A1FE99 /* SVProgressHUD */,
 				48C7802A1EC4403C002E0092 /* SDPhotoBrowser */,
 				48C780261EC43EFC002E0092 /* HMSegmentedControl */,
 				48DF509B1CF53C4300EC9B86 /* SYPhotoBrowser */,
@@ -384,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D93B8581ACFD7CF00453452 /* Main.storyboard in Resources */,
+				480F81D71ECADAE700A1FE99 /* SVProgressHUD.bundle in Resources */,
 				7D93B85A1ACFD7CF00453452 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +469,7 @@
 				7D75F9901CAF5EFE00D703E3 /* SYBatchRequest.m in Sources */,
 				7D75F9921CAF5EFE00D703E3 /* SYChainRequest.m in Sources */,
 				7D75F98B1CAF5EFE00D703E3 /* SYNetworkUtil.m in Sources */,
+				480F81D81ECADAE700A1FE99 /* SVProgressHUD.m in Sources */,
 				7D4375E21B54FB72001CEBC9 /* MeiziViewController.m in Sources */,
 				48C780291EC43EFC002E0092 /* HMSegmentedControl.m in Sources */,
 				7D93B8521ACFD7CF00453452 /* AppDelegate.m in Sources */,
