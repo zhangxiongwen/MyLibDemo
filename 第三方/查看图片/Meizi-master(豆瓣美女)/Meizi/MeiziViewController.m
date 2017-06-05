@@ -108,10 +108,22 @@
         [self.meiziArray removeAllObjects];
         [self.meiziArray addObjectsFromArray:meiziArray];
         [self.collectionView.mj_footer resetNoMoreData];
+//        NSString *showStr = [NSString stringWithFormat:@"成功刷新%@张",@(meiziArray.count)];
+//        if (meiziArray.count>0) {
+//            [SVProgressHUD showSuccessWithStatus:showStr];
+//        } else {
+//            [SVProgressHUD showErrorWithStatus:@"暂时没有照片"];
+//        }
     } else {
         if (meiziArray.count) {
             [self.meiziArray addObjectsFromArray:meiziArray];
             self.page++;
+//            NSString *showStr = [NSString stringWithFormat:@"成功加载%@张",@(meiziArray.count)];
+//            if (meiziArray.count>0) {
+//                [SVProgressHUD showSuccessWithStatus:showStr];
+//            } else {
+//                [SVProgressHUD showErrorWithStatus:@"没有更多照片了"];
+//            }
         } else {
             [self.collectionView.mj_footer endRefreshingWithNoMoreData];
         }

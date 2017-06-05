@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48B16C9B1ED55D77003CAFB3 /* CustomMunelabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B16C9A1ED55D77003CAFB3 /* CustomMunelabel.m */; };
 		EA1656FE1C40E2E20071D66E /* HistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1656EF1C40E2E20071D66E /* HistoryTableViewController.m */; };
 		EA1656FF1C40E2E20071D66E /* album.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1656F11C40E2E20071D66E /* album.png */; };
 		EA1657001C40E2E20071D66E /* album@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1656F21C40E2E20071D66E /* album@2x.png */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48B16C991ED55D77003CAFB3 /* CustomMunelabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMunelabel.h; sourceTree = "<group>"; };
+		48B16C9A1ED55D77003CAFB3 /* CustomMunelabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMunelabel.m; sourceTree = "<group>"; };
 		EA1656ED1C40E2E20071D66E /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		EA1656EE1C40E2E20071D66E /* HistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewController.h; sourceTree = "<group>"; };
 		EA1656EF1C40E2E20071D66E /* HistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewController.m; sourceTree = "<group>"; };
@@ -123,6 +126,8 @@
 				EAA2EA771BB64D3400422C42 /* AppDelegate.m */,
 				EAA2EA791BB64D3400422C42 /* ViewController.h */,
 				EAA2EA7A1BB64D3400422C42 /* ViewController.m */,
+				48B16C991ED55D77003CAFB3 /* CustomMunelabel.h */,
+				48B16C9A1ED55D77003CAFB3 /* CustomMunelabel.m */,
 				EAA2EA7C1BB64D3400422C42 /* Main.storyboard */,
 				EAA2EA7F1BB64D3400422C42 /* Images.xcassets */,
 				EAA2EA811BB64D3400422C42 /* LaunchScreen.xib */,
@@ -227,6 +232,7 @@
 				EADD4E251C0969470007AC1C /* main.m in Sources */,
 				EAA2EA7B1BB64D3400422C42 /* ViewController.m in Sources */,
 				EAA2EA781BB64D3400422C42 /* AppDelegate.m in Sources */,
+				48B16C9B1ED55D77003CAFB3 /* CustomMunelabel.m in Sources */,
 				EA16570A1C40E2E20071D66E /* XDScaningViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

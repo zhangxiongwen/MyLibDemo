@@ -14,6 +14,7 @@
     UIView *view;
 }
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @end
 
@@ -22,12 +23,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     self.title = @"我的扫描";
     XDScaningViewController *scanningVC = [[XDScaningViewController alloc]init];
-    self.imageView.image = [scanningVC generateQRCode:@"http://www.yun-xiang.net/" size:1080];
+    self.imageView.image = [scanningVC generateQRCode:@"威武霸气帅" size:1080];
 }
 
+- (IBAction)generativeQRCode:(id)sender {
+    XDScaningViewController *scanningVC = [[XDScaningViewController alloc]init];
+    self.imageView.image = [scanningVC generateQRCode:self.textField.text size:1080];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -41,8 +45,9 @@
         self.scaningResultsLabel.text = scannedStr;
     };
     [self.navigationController pushViewController:scanningVC animated:YES];
-      
 }
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
 
 @end

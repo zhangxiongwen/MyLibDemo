@@ -17,6 +17,13 @@
 @implementation AppDelegate
 
 
+/**
+ UIApplicationShortcutItemUserInfo信息
+ UIApplicationShortcutItemIconFile图标名称
+ UIApplicationShortcutItemIconType图标类型
+ UIApplicationShortcutItemTitle标题
+ UIApplicationShortcutItemSubTitle副标题
+ */
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -28,7 +35,8 @@
     // 动态添加快捷启动
     UIApplicationShortcutIcon *icon = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeAlarm];
     UIApplicationShortcutItem *item = [[UIApplicationShortcutItem alloc] initWithType:@"shortcutTypeTwo" localizedTitle:@"快看" localizedSubtitle:@"我的应用" icon:icon userInfo:nil];
-    [[UIApplication sharedApplication] setShortcutItems:@[item]];
+    UIApplicationShortcutItem *item2 = [[UIApplicationShortcutItem alloc] initWithType:@"shortcutTypeThree" localizedTitle:@"实验" localizedSubtitle:@"我的测试" icon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"lepaomoren"] userInfo:nil];
+    [[UIApplication sharedApplication] setShortcutItems:@[item,item2]];
     
     
     [self.window makeKeyAndVisible];

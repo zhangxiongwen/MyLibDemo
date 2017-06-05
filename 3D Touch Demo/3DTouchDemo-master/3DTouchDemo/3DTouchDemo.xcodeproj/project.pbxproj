@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48A40E7F1EE163A3009F4218 /* lepaomoren@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48A40E7E1EE163A3009F4218 /* lepaomoren@2x.png */; };
 		FC9F30641C575A5F001C6260 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F30631C575A5F001C6260 /* main.m */; };
 		FC9F30671C575A5F001C6260 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F30661C575A5F001C6260 /* AppDelegate.m */; };
 		FC9F306F1C575A5F001C6260 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC9F306E1C575A5F001C6260 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48A40E7E1EE163A3009F4218 /* lepaomoren@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lepaomoren@2x.png"; sourceTree = "<group>"; };
 		FC9F305F1C575A5F001C6260 /* 3DTouchDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3DTouchDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC9F30631C575A5F001C6260 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FC9F30651C575A5F001C6260 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		FC9F30611C575A5F001C6260 /* 3DTouchDemo */ = {
 			isa = PBXGroup;
 			children = (
+				48A40E7E1EE163A3009F4218 /* lepaomoren@2x.png */,
 				FC9F30651C575A5F001C6260 /* AppDelegate.h */,
 				FC9F30661C575A5F001C6260 /* AppDelegate.m */,
 				FC9F306E1C575A5F001C6260 /* Assets.xcassets */,
@@ -210,7 +213,7 @@
 				TargetAttributes = {
 					FC9F305E1C575A5F001C6260 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = UNN8UKGZ6J;
+						DevelopmentTeam = J4N9H827FQ;
 					};
 					FC9F30771C575A5F001C6260 = {
 						CreatedOnToolsVersion = 7.2;
@@ -247,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48A40E7F1EE163A3009F4218 /* lepaomoren@2x.png in Resources */,
 				FC9F30721C575A5F001C6260 /* LaunchScreen.storyboard in Resources */,
 				FC9F306F1C575A5F001C6260 /* Assets.xcassets in Resources */,
 			);
@@ -409,12 +413,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ren Li (V4P97HA2W2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ren Li (23Y3X6G95K)";
+				DEVELOPMENT_TEAM = J4N9H827FQ;
 				INFOPLIST_FILE = 3DTouchDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiang.TouchDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "174b6316-8775-48ee-bfe8-aeb0eec95347";
+				PROVISIONING_PROFILE_SPECIFIER = mySelfTongyong;
 			};
 			name = Debug;
 		};
@@ -422,12 +429,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ren Li (V4P97HA2W2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ren Li (23Y3X6G95K)";
+				DEVELOPMENT_TEAM = J4N9H827FQ;
 				INFOPLIST_FILE = 3DTouchDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiang.TouchDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "174b6316-8775-48ee-bfe8-aeb0eec95347";
+				PROVISIONING_PROFILE_SPECIFIER = mySelfTongyong;
 			};
 			name = Release;
 		};

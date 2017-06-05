@@ -7,6 +7,8 @@
 //
 
 #import "SettingViewController.h"
+#import <YYCache/YYCache.h>
+#import "SYNetworkCacheManager.h"
 
 @interface SettingViewController ()
 
@@ -35,6 +37,8 @@
     if (indexPath.row == 0) {
         __weak typeof(self) weakSelf = self;
         [SVProgressHUD show];
+        YYCache *cache = [YYCache cacheWithName:NSStringFromClass([SYNetworkCacheManager class])];
+        [cache removeAllObjects];
         [[SDImageCache sharedImageCache] clearMemory];
         [[SDImageCache sharedImageCache] clearDiskOnCompletion:^{
             [SVProgressHUD showSuccessWithStatus:@"清理完成"];

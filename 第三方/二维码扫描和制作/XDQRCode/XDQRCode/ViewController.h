@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomMunelabel.h"
 
 @interface ViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *scaningResultsLabel;
+@property (weak, nonatomic) IBOutlet CustomMunelabel *scaningResultsLabel;
 
 @end
 
