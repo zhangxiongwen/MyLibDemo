@@ -69,24 +69,6 @@ self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
     }
     
 }
-#pragma mark 创建tabbarController  继承
-NSArray *images = @[@"shouye",@"faxian",@"wode"];
-NSArray *imagesClicked = @[@"shouye_click",@"faxian_click",@"wode_click"];
-NSArray *titleName = @[@"首页",@"发现",@"我的"];
-NSArray *VCArry = @[@"HPHomePageViewController",@"NewDiscoverViewController",@"HBGMineViewController"];
-NSMutableArray *mArry = [[NSMutableArray alloc]init];
-for (NSInteger i=0; i<VCArry.count; i++) {
-    Class vcName = NSClassFromString(VCArry[i]);
-    UIViewController *vc=[[vcName alloc]init];
-    vc.title = titleName[i];
-    UINavigationController *navController=[[UINavigationController alloc]initWithRootViewController:vc];
-    navController.tabBarItem.title=titleName[i];
-    [navController.tabBarItem setSelectedImage:[[UIImage imageNamed:imagesClicked[i]]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    navController.tabBarItem.image = [[UIImage imageNamed:images[i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    [mArry addObject:navController];
-}
-self.viewControllers = mArry;
-self.tabBar.tintColor = RedColor;
 
 #pragma mark 毛玻璃效果
 UIToolbar *blurView = [[UIToolbar alloc] init];

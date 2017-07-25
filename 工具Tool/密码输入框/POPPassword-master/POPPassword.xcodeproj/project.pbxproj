@@ -536,6 +536,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = POPPassword/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = luoxusheng.com.POPPassword;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -547,6 +548,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = POPPassword/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = luoxusheng.com.POPPassword;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -618,6 +620,7 @@
 				4BB6A4C91DB750DA0026E3EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4BB6A4CA1DB750DA0026E3EA /* Build configuration list for PBXNativeTarget "POPPasswordTests" */ = {
 			isa = XCConfigurationList;
@@ -626,6 +629,7 @@
 				4BB6A4CC1DB750DA0026E3EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4BB6A4CD1DB750DA0026E3EA /* Build configuration list for PBXNativeTarget "POPPasswordUITests" */ = {
 			isa = XCConfigurationList;
@@ -634,6 +638,7 @@
 				4BB6A4CF1DB750DA0026E3EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

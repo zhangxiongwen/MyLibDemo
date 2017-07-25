@@ -78,7 +78,7 @@
 
 -(void)addDetailViews1{
     
-    self.bgView.frame = CGRectMake(ScreenWidth, self.center.y-80, ScreenWidth-40, 200);
+    self.bgView.frame = CGRectMake(ScreenWidth, self.center.y-150, ScreenWidth-40, 200);
     self.bgView.layer.cornerRadius = 15;
     self.bgView.layer.masksToBounds = YES;
     [self addSubview:self.bgView];
@@ -129,7 +129,7 @@
     
     [UIView animateWithDuration:0.5 animations:^{
         
-        self.bgView.frame = CGRectMake(20, self.center.y-80, ScreenWidth-40, 200);
+        self.bgView.frame = CGRectMake(20, self.center.y-150, ScreenWidth-40, 200);
 
         
     }];
