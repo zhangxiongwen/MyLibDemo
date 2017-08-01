@@ -335,6 +335,7 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = R77KAS4JTD;
 				INFOPLIST_FILE = CYTabBarDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ChunyuZhang.CYTabBarDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -346,6 +347,7 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = R77KAS4JTD;
 				INFOPLIST_FILE = CYTabBarDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ChunyuZhang.CYTabBarDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

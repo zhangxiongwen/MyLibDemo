@@ -12,7 +12,7 @@
 #import "ViewController3.h"
 #import "CYTabBarController.h"
 
-#define statues 1
+#define statues 3
 @interface AppDelegate ()
 
 @end
