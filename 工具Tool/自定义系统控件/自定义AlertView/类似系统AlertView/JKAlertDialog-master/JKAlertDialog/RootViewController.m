@@ -54,7 +54,11 @@
 
 - (IBAction)Touched:(id)sender {
     JKAlertDialog *alert = [[JKAlertDialog alloc]initWithTitle:@"提示" message:@""];
-    alert.contentView =  _table;
+    UITextField * textView = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, 270, 100)];
+    textView.font = [UIFont systemFontOfSize:14];
+    textView.text = @"我们的爱情";
+    NSLog(@"%d",textView.editing);
+    alert.contentView =  textView;
 
     [alert addButtonWithTitle:@"确定"];
     

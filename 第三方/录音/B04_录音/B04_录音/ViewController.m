@@ -77,8 +77,6 @@
     //录音
     [self.recorder record];
     
-    
-    
 }
 
 
@@ -129,6 +127,21 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     //AVAudioPlayer
+//    NSString *nameStr = [self.data[indexPath.row] lastPathComponent];
+////    NSURL *soundUrl = [[NSBundle mainBundle] URLForResource:nameStr withExtension:nil];
+//    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+//    
+//    //拼接音频URL
+//    NSString *soundUrl = [doc stringByAppendingPathComponent:nameStr];
+//    //音频ID,一个音频文件对应一个soundID
+//    SystemSoundID soundId = 0;
+//    NSLog(@"%d",soundId);
+//    
+//    //加载了音频文件到内存
+//    AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundUrl, &soundId);
+//    
+//    //播放音频
+//    AudioServicesPlaySystemSound(soundId);
 }
 
 

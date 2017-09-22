@@ -30,7 +30,7 @@
     }
     
     
-    WSLineChartView *wsLine = [[WSLineChartView alloc]initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, 500) xTitleArray:xArray yValueArray:yArray yMax:100 yMin:0];
+    WSLineChartView *wsLine = [[WSLineChartView alloc]initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, 300) xTitleArray:xArray yValueArray:yArray yMax:30 yMin:20];
     [self.view addSubview:wsLine];
     
 }

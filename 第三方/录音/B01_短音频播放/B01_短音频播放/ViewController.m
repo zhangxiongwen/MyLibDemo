@@ -23,8 +23,8 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    [[CZAudioTool sharedCZAudioTool] playMp3WithName:@"enemy3_down.mp3"];
-    
+//    [[CZAudioTool sharedCZAudioTool] playMp3WithName:@"enemy3_down.mp3"];
+    [self test];
    
 }
 
@@ -36,11 +36,11 @@
     //播放enemy1_down.mp3 音频文件
     
     //音频文件的URL
-    NSURL *soundUrl = [[NSBundle mainBundle] URLForResource:@"/plane.bundle/enemy1_down.mp3" withExtension:nil];
+    NSURL *soundUrl = [[NSBundle mainBundle] URLForResource:@"demo.mp3" withExtension:nil];
     
     //音频ID,一个音频文件对应一个soundID
     SystemSoundID soundId;
-    NSLog(@"%d",soundId);
+//    NSLog(@"%d",soundId);
     
     //加载了音频文件到内存
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundUrl, &soundId);

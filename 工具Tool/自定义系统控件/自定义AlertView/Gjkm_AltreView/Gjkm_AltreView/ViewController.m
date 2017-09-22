@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    GAlertView * alertView = [[GAlertView alloc]initWithStyle:GAlertViewStyleDefault];
+    GAlertView * alertView = [[GAlertView alloc]initWithStyle:GAlertViewStyleText];
     alertView.Messagestr = @"我们";
     alertView.deletegate = self;
     alertView.submiteButtonTitle = @"确定";
