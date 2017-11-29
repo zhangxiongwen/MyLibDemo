@@ -20,6 +20,9 @@
 @property (weak , nonatomic)CustomNavigationButton *rightBtn;
 /** 底部分割线 */
 @property (nonatomic,weak) CAShapeLayer *border;
+
+- (void)customNavigationLabelColor:(UIColor *)color;
+
 @end
 
 

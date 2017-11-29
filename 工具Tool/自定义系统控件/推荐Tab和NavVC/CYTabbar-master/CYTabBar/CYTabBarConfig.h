@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, HidesBottomBarWhenPushedOption) {
+    HidesBottomBarWhenPushedNormal,  /**< 普通样式，存在所有页面 */
+    
+    HidesBottomBarWhenPushedAlone,  /**< 只在根页面存在 */
+    
+    HidesBottomBarWhenPushedTransform  /**< 只在根页面存在，在其他页下移消失 */
+};
+
 @interface CYTabBarConfig : NSObject
 /** 设置文字颜色 */
 @property (strong , nonatomic) UIColor *textColor;
@@ -17,12 +25,13 @@
 @property(strong , nonatomic) UIColor *backgroundColor;
 /** 指定的初始化控制器 */
 @property(assign , nonatomic) NSInteger selectIndex;
-/** 是否存在bar底部分割线 */
-@property(assign , nonatomic) BOOL haveBorder;
-/** bar底部分割线的高度 */
-@property(assign , nonatomic) CGFloat borderHeight;
-/** bar的底部分割线颜色 */
-@property(strong , nonatomic) UIColor *bordergColor;
+/** 中间按钮所在位置 */
+@property (nonatomic,assign) NSInteger centerBtnIndex;
+/** 中间按钮凸出的高度 */
+@property (nonatomic,assign) CGFloat bulgeHeight;
+/** 二级页面隐藏选项 */
+@property (nonatomic,assign) HidesBottomBarWhenPushedOption HidesBottomBarWhenPushedOption;
+
 
 /**
  *  外观配置的单例对象

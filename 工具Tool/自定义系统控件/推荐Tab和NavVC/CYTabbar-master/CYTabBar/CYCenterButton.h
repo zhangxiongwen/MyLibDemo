@@ -7,7 +7,6 @@
 //
 
 #import "CYTabBarConfig.h"
-#define BULGEH 16   //button bulge of height
 
 @interface CYCenterButton : UIButton
 /** Whether center button to bulge */

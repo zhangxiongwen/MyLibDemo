@@ -8,34 +8,7 @@ OS_ACTIVITY_MODE : disable
 
 TabbarController
 //github： https://github.com/renzifeng/ZFTabBar/issues/2
-//添加监听
-[[CentralManager sharedManager] addEventListener:self];
-//开始扫描服务
-CBUUID *servUUID = [CBUUID UUIDWithString:HEART_UUID];
-NSArray * arr = @[servUUID];
-//开始监听
-[[CentralManager sharedManager]startdiscoverSerVices:[CentralManager sharedManager].deviceTied WithUUID:arr];
-#pragma mark - 从蓝牙 接收运动数据
-- (void)didUpdateDeviceValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
-{
-    if ([[characteristic.UUID UUIDString] isEqualToString:WARNING_DATA_READ_UUID]) {
-        unsigned char* txValue = (unsigned char*)[characteristic.value bytes];
-        print_hex_ascii_line(txValue, 20, 0);
-        char retjson[512] = {0};
-        parseDateSync(txValue, retjson);
-        DDLog(@"  用药：step json = %s", retjson);
 
-        //解析运动的数值
-        //"{\"key\":%d, \"value\":{\"datasum\":%d,\"step\":%d,\"range\":%d, \"Kals\":%d}}
-        
-        NSString *strData = [NSString stringWithUTF8String:retjson];
-        
-        NSDictionary *sportDic = [NSString parseJSONStringToNSDictionary:strData];
-        
-        int rootDic = [[sportDic objectForKey:@"key"] intValue];
-        
-    }
-}
 /**
  //获取当前音量，不改变使用者音量
  -(float) getVolumeLevel
@@ -153,6 +126,9 @@ defaults write com.apple.dock persistent-others -array-add '{"tile-data" = {"lis
 火狐浏览器打不开时  终端输入： /Applications/Firefox.app/Contents/MacOS/firefox-bin -profilemanager
 
 如果没有’任何来源‘这个选项的话（macOS Sierra 10.12）,打开终端，执行sudo spctl --master-disable即可
+
+find . -type d -name ".svn"|xargs rm -rf //删除当前目录下所有的.svn文件
+find . -type d -name ".git"|xargs rm -rf //删除当前目录下所有的.git文件
 
 #pragma mark - 横屏代码
 - (BOOL)shouldAutorotate

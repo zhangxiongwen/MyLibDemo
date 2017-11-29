@@ -17,16 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor redColor];
     self.tabBarItem.badgeColor = [UIColor orangeColor];
-    self.tabBarItem.badgeValue = @"1234";
-    
-    self.navigationItem.title = @"朋友圈";
+    self.tabBarItem.badgeValue = nil;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 
 @end

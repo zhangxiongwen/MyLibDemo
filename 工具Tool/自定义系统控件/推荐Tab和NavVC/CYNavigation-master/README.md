@@ -3,7 +3,7 @@
 [![](https://img.shields.io/badge/language-Object--C-1eafeb.svg?style=flat)](https://developer.apple.com/Objective-C)
 [![](https://img.shields.io/badge/license-MIT-353535.svg?style=flat)](https://developer.apple.com/iphone/index.action)
 [![](https://img.shields.io/badge/platform-iOS-lightgrey.svg?style=flat)](https://github.com/zhangchunyu2016/CYNavigation)
-[![](https://img.shields.io/badge/Pod-v1.0.0-blue.svg?style=flat)](https://cocoapods.org/?q=cytabbar)
+[![](https://img.shields.io/badge/Pod-v1.1.0-blue.svg?style=flat)](https://cocoapods.org/?q=cytabbar)
 [![](https://img.shields.io/badge/QQ-707214577-red.svg)](http://wpa.qq.com/msgrd?v=3&uin=707214577&site=qq&menu=yes)
 
 
@@ -23,7 +23,7 @@
 
 ##### 方式1:CocoaPods安装
 ```
-pod 'CYNavigation'
+pod 'CYNavigation',:git=>'https://github.com/zhangchunyu2016/CYNavigation.git'
 ```
 
 
@@ -66,11 +66,13 @@ self.navigationbar.rightBtn addTarget:self action:@selector(next) forControlEven
 
 ## 四.  更新历史 - Update History
 
-暂无		  
+2017-11-22		修复iOS11下 侧滑返回卡死的问题  
 
 ## 五.  更多 - More
 
-- 如果你发现任何Bug 或者 新需求请issue我.
+- 如果你发现任何Bug 或者 有趣的需求请issue我.
 
-- 大家一起讨论一起学习进步.
+- 大家一起讨论一起学习进步.</br>
+<p>如果issue不能及时响应你，着急的情况下！你可以通过微信(WeChat)及时联系到我👇。</p></br>
+<img src="http://upload-images.jianshu.io/upload_images/2028853-d6cc84ab3ce4caf0.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/310">
   

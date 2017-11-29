@@ -21,10 +21,9 @@
     if (self) {
         //abandon system navigationbar
         for (UIView *loop in self.navigationBar.subviews) {
-            [loop removeFromSuperview];
+            loop.hidden = YES;
         }
         self.navigationBar.hidden = YES;
-        [self.navigationBar removeFromSuperview];
         self.delegate = self;
         self.interactivePopGestureRecognizer.enabled = NO;
         self.interactivePopGestureRecognizer.delegate = nil;

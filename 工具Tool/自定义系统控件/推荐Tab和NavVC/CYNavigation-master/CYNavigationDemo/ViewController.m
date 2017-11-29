@@ -16,20 +16,10 @@
 
 @implementation ViewController
 
-//设置状态栏颜色
-- (void)setStatusBarBackgroundColor:(UIColor *)color {
-    
-    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
-    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
-        statusBar.backgroundColor = color;
-    }
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
 }
--(void)viewWillAppear:(BOOL)animated{
-    
-//    [self setStatusBarBackgroundColor:[UIColor redColor]];
-    [UIApplication sharedApplication].statusBarStyle=UIStatusBarStyleLightContent;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavgation];
@@ -39,6 +29,8 @@
 #pragma mark - 设置导航栏
 - (void)setNavgation{
     self.navigationbar = [self standardNavigationbar];
+    self.navigationbar.backgroundColor = [UIColor whiteColor];
+    [self.navigationbar customNavigationLabelColor:[UIColor blackColor]];
     self.navigationbar.title.text = @"首页";
     [self.navigationbar.rightBtn setTitle:@"下一页" forState:UIControlStateNormal];
     [self.navigationbar.rightBtn addTarget:self action:@selector(next) forControlEvents:

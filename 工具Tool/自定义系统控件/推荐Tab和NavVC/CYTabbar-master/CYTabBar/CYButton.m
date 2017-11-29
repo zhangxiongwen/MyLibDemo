@@ -10,7 +10,7 @@
 #import "CYBadgeView.h"
 
 @interface CYButton()
-/** remind number */
+// remind number
 @property (weak , nonatomic)CYBadgeView * badgeView;
 @end
 
@@ -18,8 +18,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    if (self)
-    {
+    if (self) {
         self.titleLabel.font = [UIFont systemFontOfSize:10];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.adjustsImageWhenHighlighted = NO;
@@ -30,14 +29,16 @@
     return self;
 }
 
-- (void)layoutSubviews{
+- (void)layoutSubviews {
     [super layoutSubviews];
     CGFloat width = self.frame.size.width;
     CGFloat height = self.superview.frame.size.height;
-    if (width!=0 && height!=0)
-    {
-        self.titleLabel.frame = CGRectMake(0, height-16, width, 16);
+    if (self.titleLabel.text && ![self.titleLabel.text isEqualToString:@""]) {
+        self.titleLabel.frame = CGRectMake(0, self.frame.size.height -([CYTabBarConfig shared].bulgeHeight), width, 16);
         self.imageView.frame = CGRectMake(0 , 0, width, 35);
+    }
+    else{
+        self.imageView.frame = CGRectMake(0 , 0, width, height);
     }
 }
 
@@ -45,8 +46,8 @@
  *  Set red dot item
  */
 - (void)setItem:(UITabBarItem *)item {
-    self.badgeView.badgeValue = item.badgeValue;
-    self.badgeView.badgeColor = item.badgeColor;
+    self.badgeView.badgeValue = [item valueForKeyPath:@"badgeValue"];
+    self.badgeView.badgeColor = [item valueForKeyPath:@"badgeColor"];
 }
 
 /**

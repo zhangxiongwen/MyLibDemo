@@ -12,8 +12,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
-    if (self)
-    {
+    if (self) {
         self.userInteractionEnabled = NO;
         self.titleLabel.font = [UIFont systemFontOfSize:12];
         //set protection of image area
@@ -31,10 +30,8 @@
 /**
  *  Set remind number
  */
-- (void)setBadgeValue:(NSString *)badgeValue
-{
-    if (![_badgeValue isEqualToString:badgeValue])
-    {
+- (void)setBadgeValue:(NSString *)badgeValue {
+    if (![_badgeValue isEqualToString:badgeValue]) {
         _badgeValue = badgeValue;
         [self setTitle:([badgeValue isEqualToString:@"remind"] ? nil : badgeValue)
               forState:UIControlStateNormal];
@@ -44,7 +41,7 @@
 /**
  *  Set color for remind Badge
  */
-- (void)setBadgeColor:(UIColor *)badgeColor{
+- (void)setBadgeColor:(UIColor *)badgeColor {
     if (badgeColor!=nil && ![_badgeColor isEqual:badgeColor]) {
         UIImage *image = [UIImage imageNamed:@"CYTabBar.bundle/main_badge"];
         UIGraphicsBeginImageContextWithOptions(image.size, NO, 0);
@@ -61,13 +58,13 @@
     }
 }
 
-- (void)OrientationDidChange{
+- (void)OrientationDidChange {
     if (_badgeValue != nil) {
         [self performSelector:@selector(layoutSubviews) withObject:nil afterDelay:0.05];
     }
 }
 
-- (void)layoutSubviews{
+- (void)layoutSubviews {
     [super layoutSubviews];
     /**
      *  red dot remind
@@ -95,7 +92,7 @@
         n = 10;
         [self setTitle:@"99+" forState:UIControlStateNormal];
     }
-    else{
+    else {
         n = [_badgeValue integerValue] > 9 ? 8 : 0; //number beyond 9 to broaden
         [self setTitle:_badgeValue forState:UIControlStateNormal];
     }
@@ -105,7 +102,7 @@
                             self.currentBackgroundImage.size.height);
 }
 
-- (void)dealloc{
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
 }
 @end

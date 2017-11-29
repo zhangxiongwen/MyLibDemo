@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef UIPanGestureRecognizer *(^backBlock)();
+typedef UIPanGestureRecognizer *(^backBlock)(void);
 
 @interface CYNavigationConfig : NSObject
 /** bar的高度 */

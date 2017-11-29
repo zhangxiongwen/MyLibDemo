@@ -19,7 +19,7 @@
         config.height = 64.0;
         
         //bar的背景颜色
-        config.backgroundColor = [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1];
+        config.backgroundColor = [UIColor blueColor];
         
         //是否存在bar底部分割线
         config.haveBorder = YES;

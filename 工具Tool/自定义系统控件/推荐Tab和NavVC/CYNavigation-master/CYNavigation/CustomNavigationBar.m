@@ -120,7 +120,11 @@
     }
     return _border;
 }
-
+- (void)customNavigationLabelColor:(UIColor *)color{
+    [CYNavigationConfig shared].leftBtnImageColor = color;
+    [self.rightBtn  setTitleColor:color forState:UIControlStateNormal];
+    self.title.textColor = color;
+}
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
 }

@@ -11,7 +11,7 @@
 #define CYTABBARCONTROLLER ((CYTabBarController *)self.tabBarController)
 
 /**
- *  README
+ *  源代码地址: https://github.com/zhangchunyu2016/CYTabbar
  
  *  中间按钮可以 设置为 [控制器 或 普通触发事件的按钮]     
  *  ----> 只需要设置为普通按钮的话，Controller传入nil即可
@@ -44,15 +44,15 @@
  *  ----> 可以通过单例 CYTabBarConfig 来改变默认选择的控制器、背景色、字体色等
  *  ----> 如果中间按钮为控制器那么它的索引为添加的个数的最后
  *  ----> [CYTabBarConfig shared]
- 
- *  源代码地址
- *  https://github.com/zhangchunyu2016/CYTabbar
+
  */
 
 
 @interface CYTabBarController : UITabBarController
-/** 自定义的tabbar */
+/** tabBar */
 @property (strong , nonatomic) CYTabBar* tabbar;
+/** 拦截点击手势的层 */
+@property (strong , nonatomic) ContentView* contentView;
 
 /**
  * 添加子控制器
@@ -78,12 +78,4 @@
                      title:(NSString *)title
                  imageName:(NSString *)imageName
          selectedImageName:(NSString *)selectedImageName;
-
-/**
- * 隐藏tabbar
- * @param hidden            是否隐藏
- * @param animated          是否执行动画
- */
-- (void)setCYTabBarHidden:(BOOL)hidden animated:(BOOL)animated;
-
 @end

@@ -15,21 +15,19 @@
 
 @implementation ViewController2
 
--(void)viewWillAppear:(BOOL)animated{
-    [UIApplication sharedApplication].statusBarStyle=UIStatusBarStyleDefault;
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self setNavgation];
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+}
 #pragma mark - 设置导航栏
 - (void)setNavgation{
     self.navigationbar = [self standardNavigationbar];
-    self.navigationbar.backgroundColor = [UIColor whiteColor];
-    [CYNavigationConfig shared].fontColor = [UIColor blackColor];
-    [CYNavigationConfig shared].leftBtnImageColor = [UIColor blackColor];
+    [self.navigationbar customNavigationLabelColor:[UIColor whiteColor]];
     self.navigationbar.title.text = @"子页";
     [self.navigationbar.leftBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     [self.navigationbar.rightBtn setTitle:@"下一页" forState:UIControlStateNormal];
@@ -45,5 +43,6 @@
 - (void)back{
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 @end

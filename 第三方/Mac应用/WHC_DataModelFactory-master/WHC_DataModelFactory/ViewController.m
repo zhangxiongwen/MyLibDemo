@@ -167,9 +167,8 @@ typedef enum : NSUInteger {
 - (void)setTextViewStyle {
     _jsonField.font = [NSFont systemFontOfSize:14];
     _jsonField.textColor = [NSColor colorWithRed:198.0 / 255.0 green:77.0 / 255.0 blue:21.0 / 255.0 alpha:1.0];
-    _jsonField.backgroundColor = [NSColor whiteColor];
-    _classMField.backgroundColor = _jsonField.backgroundColor;
-    _classField.backgroundColor = _jsonField.backgroundColor;
+//    _classMField.backgroundColor = _jsonField.backgroundColor;
+//    _classField.backgroundColor = _jsonField.backgroundColor;
 }
 
 - (IBAction)clickCheckUpdate:(NSButton *)sender {

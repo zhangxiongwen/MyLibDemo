@@ -22,13 +22,13 @@
     //配置默认UI (更多设置可以去头文件看一下)
     [CYNavigationConfig shared].backgroundColor = [UIColor orangeColor];
     [CYNavigationConfig shared].fontColor = [UIColor whiteColor];
-    [CYNavigationConfig shared].leftBtnImageColor = [UIColor redColor];
+//    [CYNavigationConfig shared].leftBtnImageColor = [UIColor redColor];
     [CYNavigationConfig shared].borderHeight = 0.5;
     [CYNavigationConfig shared].backGesture = ^UIPanGestureRecognizer *{
         return [[UIPanGestureRecognizer alloc]init];
     }; //全屏返回
     [CYNavigationConfig shared].transitionAnimationClass = NSClassFromString(@"HighlightTransitionAnimation");//凸显的过渡动画
-    
+//    [CYNavigationConfig shared].transitionAnimationClass = NSClassFromString(@"NormalTransitionAnimation");//平移的过渡动画
     ViewController *vc = [[ViewController alloc]init];
     vc.view.backgroundColor = [UIColor whiteColor];
     CYNavigationController *nav = [[CYNavigationController alloc]initWithRootViewController:vc];
