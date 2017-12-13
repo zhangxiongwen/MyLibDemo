@@ -95,6 +95,8 @@ Default-667h@2x.png  (750 x 1334) iphone6
 
 Default-736h@3x.png  (1242 x 2208) iphone6 plus
 
+Default-812h@3x.png  (1125 x 2436) iphoneX
+
 根据横(Landscape)、竖(Portrait)屏iPad有如下几种(主要区别在于是否为Retina屏)：
 
 Default-Portrait.png (768 x 1024)
