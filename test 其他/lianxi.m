@@ -6,7 +6,27 @@ OS_ACTIVITY_MODE : disable
 //  打包地址  /Users/zhaoyunzhou/Library/Developer/Xcode/Archives/
 更换包的路径 ->  应用程序-Xcode–显示包内容-contents–Developer–Platforms–iPhoneOS.platform–DeviceSupport里
 
-TabbarController
+//开启apache:
+sudo apachectl start
+//重启apache:
+sudo apachectl restart
+//关闭apache:
+sudo apachectl stop
+
+//Apache的修改路径——
+/Library/WebServer/Documents
+
+//Mac是默认安装了Python2.7的，可以找到自己的网页路径，然后打开Terminal，输入：
+$:python -m SimpleHTTPServer
+//即在默认端口8000开启本地服务器，在浏览器输入——
+$:127.0.0.1：8000
+//就可以访问该路径了。如果自己装了python3，命令变为：
+$:python -m http.server
+//功能一样。如果想更改默认端口，只要在命令最后输入自己定义的端口就可以了。例如：
+$:python -m http.server 2333
+//就把端口改为了2333。
+
+#TabbarController
 //github： https://github.com/renzifeng/ZFTabBar/issues/2
 
 /**

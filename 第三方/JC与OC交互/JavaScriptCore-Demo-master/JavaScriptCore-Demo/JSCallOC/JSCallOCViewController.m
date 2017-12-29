@@ -67,7 +67,7 @@
     {
         NSLog(@"%@", str);
     };
-    
+
     // 以 block 形式关联 JavaScript function
     self.context[@"alert"] =
     ^(NSString *str)
@@ -75,7 +75,7 @@
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"msg from js" message:str delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
         [alert show];
     };
-    
+
     __block typeof(self) weakSelf = self;
     self.context[@"addSubView"] =
     ^(NSString *viewname)
@@ -93,6 +93,14 @@
         NSLog(@"%@ %@ %@",a,b,c);
     };
     
+//    [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"achieve(\"%@\",\"%@\",\"%@\")",@"51",@"t3KCthV2c5204ACMTN5DG5BZUTtWt6KtsAVutZsbtYRSQFJJk5A",@"25"]];
+    
+    //fenxiang_icon 分享大图
+    
+}
+- (void)webview:(NSString *)controller Title:(NSString *)title{
+    self.title = title;
+    NSLog(@"****title****%@",title);
 }
 
 #pragma mark - JSExport Methods
