@@ -6,6 +6,8 @@ OS_ACTIVITY_MODE : disable
 //  打包地址  /Users/zhaoyunzhou/Library/Developer/Xcode/Archives/
 更换包的路径 ->  应用程序-Xcode–显示包内容-contents–Developer–Platforms–iPhoneOS.platform–DeviceSupport里
 
+project包路径 : /Users/lurich/Library/Developer/Xcode/DerivedData/
+
 //开启apache:
 sudo apachectl start
 //重启apache:

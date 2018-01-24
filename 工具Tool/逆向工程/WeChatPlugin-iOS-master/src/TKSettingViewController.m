@@ -27,6 +27,9 @@
         if (winSize.size.height == 812) { // iPhone X 高为812
             winSize.size.height -= 88;
             winSize.origin.y = 88;
+        } else {
+            winSize.size.height -= 64;
+            winSize.origin.y = 64;
         }
         _tableViewInfo = [[objc_getClass("MMTableViewInfo") alloc] initWithFrame:winSize style:UITableViewStyleGrouped];
     }

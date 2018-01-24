@@ -7,19 +7,35 @@
 
 - (void)AddEmoticonMsg:(NSString *)msg MsgWrap:(CMessageWrap *)msgWrap {
     if ([[TKRobotConfig sharedConfig] preventGameCheatEnable]) { // 是否开启游戏作弊
-        if ([msgWrap m_uiMessageType] == 47 && ([msgWrap m_uiGameType] == 2|| [msgWrap m_uiGameType] == 1)) {
+        if ([msgWrap m_uiMessageType] == 47 && [msgWrap m_uiGameType] == 2) {
             [EmoticonGameCheat showEoticonCheat:[msgWrap m_uiGameType] callback:^(NSInteger random){
-                [msgWrap setM_nsEmoticonMD5:[objc_getClass("GameController") getMD5ByGameContent:random]];
-                [msgWrap setM_uiGameContent:random];
-                %orig(msg, msgWrap);
+                NSString *string = [objc_getClass("GameController") getMD5ByGameContent:random];
+                msgWrap.m_uiGameContent = random;
+                msgWrap.m_nsEmoticonMD5 = string;
+                %orig;
             }];
-            return;
+        } else if ([msgWrap m_uiMessageType] == 47 && [msgWrap m_uiGameType] == 1) {
+            [EmoticonGameCheat showEoticonCheat:[msgWrap m_uiGameType] callback:^(NSInteger random){
+                //  m_nsEmoticonBelongToProductID    m_nsEmoticonMD5
+                NSString *string = [objc_getClass("GameController") getMD5ByGameContent:random];
+                msgWrap.m_uiGameContent = random;
+                msgWrap.m_nsEmoticonMD5 = string;
+                %orig(msg,msgWrap);
+            }];
+        } else {
+            %orig;
         }
+    } else {
+        %orig;
     }
-
-    %orig(msg, msgWrap);
 }
-
+- (void)AsyncOnAddMsg:(NSString *)msg MsgWrap:(CMessageWrap *)wrap {
+    %orig;
+    switch(wrap.m_uiMessageType) {
+    case 49: break;
+    default: break;
+    }
+}
 - (void)MessageReturn:(unsigned int)arg1 MessageInfo:(NSDictionary *)info Event:(unsigned int)arg3 {
     %orig;
     CMessageWrap *wrap = [info objectForKey:@"18"];

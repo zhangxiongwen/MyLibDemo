@@ -34,6 +34,7 @@ typedef NS_ENUM(NSUInteger, TKArrayTpye) {
 @property(nonatomic, assign) NSInteger m_uiGameType;  // 1、猜拳; 2、骰子; 0、自定义表情
 @property(nonatomic, assign) unsigned long m_uiGameContent;
 @property(nonatomic, strong) NSString *m_nsEmoticonMD5;
+@property(copy, nonatomic) NSString *m_nsEmoticonBelongToProductID;
 @property(nonatomic) long long m_n64MesSvrID;
 @property (nonatomic, copy) NSString *m_nsContent;                      // 内容
 @property (nonatomic, copy) NSString *m_nsToUsr;                        // 接收的用户(微信id)
