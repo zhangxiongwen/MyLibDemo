@@ -103,17 +103,26 @@
 
 - (void)AddEmoticonMsg:(NSString *)msg MsgWrap:(CMessageWrap *)msgWrap {
     if ([[WBRedEnvelopConfig sharedConfig] preventGameCheatEnable]) { // 是否开启游戏作弊
-       if ([msgWrap m_uiMessageType] == 47 && ([msgWrap m_uiGameType] == 2|| [msgWrap m_uiGameType] == 1)) {
+       if ([msgWrap m_uiMessageType] == 47 && [msgWrap m_uiGameType] == 2) {
            [EmoticonGameCheat showEoticonCheat:[msgWrap m_uiGameType] callback:^(NSInteger random){
-               [msgWrap setM_uiGameContent:random];
-               [msgWrap setM_nsEmoticonMD5:[objc_getClass("GameController") getMD5ByGameContent:random]];
-                %orig;
+               NSString *string = [objc_getClass("GameController") getMD5ByGameContent:random];
+               msgWrap.m_uiGameContent = random;
+               msgWrap.m_nsEmoticonMD5 = string;
+               %orig;
+           }];
+       } else if ([msgWrap m_uiMessageType] == 47 && [msgWrap m_uiGameType] == 1) {
+           [EmoticonGameCheat showEoticonCheat:[msgWrap m_uiGameType] callback:^(NSInteger random){
+               //  m_nsEmoticonBelongToProductID    m_nsEmoticonMD5
+               NSString *string = [objc_getClass("GameController") getMD5ByGameContent:random];
+               msgWrap.m_uiGameContent = random;
+               msgWrap.m_nsEmoticonMD5 = string;
+               %orig(msg,msgWrap);
            }];
        } else {
-         %orig;
+           %orig;
        }
     } else {
-      %orig;
+       %orig;
     }
 }
 

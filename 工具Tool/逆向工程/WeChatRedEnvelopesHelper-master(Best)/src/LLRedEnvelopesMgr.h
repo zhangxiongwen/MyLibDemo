@@ -29,6 +29,8 @@
 @property (nonatomic, assign) BOOL isSnatchSelfRedEnvelopes; //是否抢自己的发的红包
 @property (nonatomic, assign) BOOL isOpenAvoidRevokeMessage; //是否打开防止好友撤回消息
 @property (nonatomic, assign) BOOL sportStepCountMode; //运动步数模式 true: 范围随机 false:固定步数
+@property (nonatomic, assign) BOOL isUpdateLocation; //是否打开实时更新经纬度
+
 @property (nonatomic, assign) NSInteger sportStepCountUpperLimit; //运动步数上限
 @property (nonatomic, assign) NSInteger sportStepCountLowerLimit; //运动步数下限
 @property (nonatomic, copy)   NSString *keywordFilterText; //要过滤的关键字

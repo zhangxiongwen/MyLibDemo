@@ -12,7 +12,11 @@
         CLLocation *virutalLocation = [[LLRedEnvelopesMgr shared] getVirutalLocationWithRealLocation:newLocation];
     	%orig(manager,virutalLocation,oldLocation?virutalLocation:nil);
     } else {
-        %orig;
+        if ([LLRedEnvelopesMgr shared].isUpdateLocation) {
+            [[LLRedEnvelopesMgr shared] setLatitude:newLocation.coordinate.latitude];
+            [[LLRedEnvelopesMgr shared] setLongitude:newLocation.coordinate.longitude];
+            %orig;
+        }
     }
 }
 
@@ -20,7 +24,11 @@
     if([LLRedEnvelopesMgr shared].isOpenVirtualLocation && location && [location isMemberOfClass:[CLLocation class]]){
         %orig(mapView,[[LLRedEnvelopesMgr shared] getVirutalLocationWithRealLocation:location]);
     } else {
-        %orig;
+        if ([LLRedEnvelopesMgr shared].isUpdateLocation) {
+            [[LLRedEnvelopesMgr shared] setLatitude:location.coordinate.latitude];
+            [[LLRedEnvelopesMgr shared] setLongitude:location.coordinate.longitude];
+            %orig;
+        }
     }
 }
 
@@ -35,7 +43,11 @@
         CLLocation *virutalLocation = [[LLRedEnvelopesMgr shared] getVirutalLocationWithRealLocation:newLocation];
         %orig(manager,virutalLocation,oldLocation?virutalLocation:nil);
     } else {
-        %orig;
+        if ([LLRedEnvelopesMgr shared].isUpdateLocation) {
+            [[LLRedEnvelopesMgr shared] setLatitude:newLocation.coordinate.latitude];
+            [[LLRedEnvelopesMgr shared] setLongitude:newLocation.coordinate.longitude];
+            %orig;
+        }
     }
 }
 

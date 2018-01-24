@@ -7,9 +7,7 @@
 //
 
 #import "zhFullView.h"
-#import "UIColor+Extend.h"
 #import "UIView+Layout.h"
-#import "UIScreen+Extend.h"
 #import "zhIconLabel.h"
 
 @interface zhFullView () <UIScrollViewDelegate> {
@@ -61,8 +59,8 @@
 }
 
 - (void)setContent {
-    _closeButton.size = CGSizeMake([UIScreen width], 44);
-    _closeButton.bottom = [UIScreen height];
+    _closeButton.size = CGSizeMake([[UIScreen mainScreen] bounds].size.width, 44);
+    _closeButton.bottom = [[UIScreen mainScreen] bounds].size.height;
     _closeIcon.size = CGSizeMake(30, 30);
     _closeIcon.center = _closeButton.center;
 }
@@ -78,11 +76,11 @@
 
     _itemSize = CGSizeMake(60, 95);
     _gap = 15;
-    _space = ([UIScreen width] - self.rowCount * _itemSize.width) / (self.rowCount + 1);
+    _space = ([[UIScreen mainScreen] bounds].size.width - self.rowCount * _itemSize.width) / (self.rowCount + 1);
 
-    _scrollContainer.size = CGSizeMake([UIScreen width], _itemSize.height * self.rows + _gap  + 150);
-    _scrollContainer.bottom = [UIScreen height] - _closeButton.height;
-    _scrollContainer.contentSize = CGSizeMake([UIScreen width], _scrollContainer.height);
+    _scrollContainer.size = CGSizeMake([[UIScreen mainScreen] bounds].size.width, _itemSize.height * self.rows + _gap  + 150);
+    _scrollContainer.bottom = [[UIScreen mainScreen] bounds].size.height - _closeButton.height;
+    _scrollContainer.contentSize = CGSizeMake([[UIScreen mainScreen] bounds].size.width, _scrollContainer.height);
 
     _pageViews = @[].mutableCopy;
     UIImageView *pageView = [UIImageView new];
@@ -109,7 +107,7 @@
                 item.model = [models objectAtIndex:item.tag];
                 item.iconView.userInteractionEnabled = NO;
                 item.textLabel.font = [UIFont systemFontOfSize:14];
-                item.textLabel.textColor = [UIColor r:82 g:82 b:82];
+                item.textLabel.textColor = [UIColor colorWithRed:82/255.0 green:82/255.0 blue:82/255.0 alpha:1.0];
                 [item updateLayoutBySize:_itemSize finished:^(zhIconLabel *item) {
                     item.x = _space + (_itemSize.width  + _space) * l;
                     item.y = (_itemSize.height + _gap) * v + _gap + 100;
@@ -141,7 +139,7 @@
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSInteger index = scrollView.contentOffset.x /[UIScreen width] + 0.5;
+    NSInteger index = scrollView.contentOffset.x /[[UIScreen mainScreen] bounds].size.width + 0.5;
     _closeButton.userInteractionEnabled = index > 0;
     [_closeIcon setImage:[UIImage imageNamed:@"popup_close_btn"] forState:UIControlStateNormal];
 }

@@ -383,5 +383,12 @@ static NSString * const XYLongitudeValueKey = @"longitude";
 - (CLLocation *)getVirutalLocationWithRealLocation:(CLLocation *)realLocation{
     return self.isOpenVirtualLocation ? [[CLLocation alloc] initWithCoordinate:CLLocationCoordinate2DMake(self.latitude, self.longitude) altitude:realLocation.altitude horizontalAccuracy: realLocation.horizontalAccuracy verticalAccuracy:realLocation.verticalAccuracy course:realLocation.course speed:realLocation.speed timestamp:realLocation.timestamp] : realLocation;
 }
+- (BOOL)isUpdateLocation{
+    return [[NSUserDefaults standardUserDefaults] doubleForKey:@"isUpdateLocation"];
+}
+- (void)setIsUpdateLocation:(BOOL)isUpdateLocation{
+    [[NSUserDefaults standardUserDefaults] setBool:isUpdateLocation forKey:@"isUpdateLocation"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 
 @end

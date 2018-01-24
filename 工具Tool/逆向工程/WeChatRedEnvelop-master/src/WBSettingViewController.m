@@ -68,7 +68,7 @@
     [self addNiubilitySection];
     [self addAdvanceSettingSection];
     [self addModifyCoordinateCell];
-//    [self addSupportSection];
+    [self addSupportSection];
     
     MMTableView *tableView = [self.tableViewInfo getTableView];
     [tableView reloadData];
@@ -302,6 +302,16 @@
     [self.tableViewInfo addSection:sectionInfo];
 }
 
+- (MMTableViewCellInfo *)createMapViewCell {
+    MMTableViewCellInfo *cellInfo = [objc_getClass("MMTableViewCellInfo")  normalCellForSel:@selector(jumpToMapView) target:self title:@"进入地图页选择位置" accessoryType:1];
+    return cellInfo;
+}
+
+- (void)jumpToMapView {
+    XYMapViewController *mvc = [[XYMapViewController alloc] init];
+    [self showViewController:mvc sender:self];
+}
+
 - (MMTableViewCellInfo *)createadLatitudeCell {
     double latitude = [[WBRedEnvelopConfig sharedConfig] latitude];
     MMTableViewCellInfo *cellInfo = [objc_getClass("MMTableViewCellInfo")  normalCellForSel:@selector(updateLatitude) target:self title:@"修改的经度(latitude)" rightValue:[NSString stringWithFormat:@"%f", latitude] accessoryType:1];
@@ -314,16 +324,6 @@
     MMTableViewCellInfo *cellInfo = [objc_getClass("MMTableViewCellInfo")  normalCellForSel:@selector(updateLongitude) target:self title:@"修改的纬度(longitude)" rightValue:[NSString stringWithFormat:@"%f", longitude] accessoryType:1];
     
     return cellInfo;
-}
-
-- (MMTableViewCellInfo *)createMapViewCell {
-    MMTableViewCellInfo *cellInfo = [objc_getClass("MMTableViewCellInfo")  normalCellForSel:@selector(jumpToMapView) target:self title:@"进入地图页选择位置" accessoryType:1];
-    return cellInfo;
-}
-
-- (void)jumpToMapView {
-    XYMapViewController *mvc = [[XYMapViewController alloc] init];
-    [self showViewController:mvc sender:self];
 }
 
 /// 更新经度
