@@ -29,6 +29,7 @@ static NSString * const wantSportStepCountKey = @"wantSportStepCountKey";
 static NSString * const filterRoomDicKey = @"filterRoomDicKey";
 static NSString * const XYLatitudeValueKey = @"latitude";
 static NSString * const XYLongitudeValueKey = @"longitude";
+static NSString * const KTKPreventGameCheatEnableKey = @"KTKPreventGameCheatEnableKey";
 
 @implementation LLRedEnvelopesMgr
 
@@ -63,6 +64,7 @@ static NSString * const XYLongitudeValueKey = @"longitude";
         _openRedEnvelopesDelaySecond = [userDefaults floatForKey:openRedEnvelopesDelaySecondKey];
         _wantSportStepCount = [userDefaults integerForKey:wantSportStepCountKey];
         _filterRoomDic = [userDefaults objectForKey:filterRoomDicKey];
+        _preventGameCheatEnable = [[NSUserDefaults standardUserDefaults] boolForKey:KTKPreventGameCheatEnableKey];
     }
     return self;
 }
@@ -388,6 +390,12 @@ static NSString * const XYLongitudeValueKey = @"longitude";
 }
 - (void)setIsUpdateLocation:(BOOL)isUpdateLocation{
     [[NSUserDefaults standardUserDefaults] setBool:isUpdateLocation forKey:@"isUpdateLocation"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)setPreventGameCheatEnable:(BOOL)preventGameCheatEnable {
+    _preventGameCheatEnable = preventGameCheatEnable;
+    [[NSUserDefaults standardUserDefaults] setBool:preventGameCheatEnable forKey:KTKPreventGameCheatEnableKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

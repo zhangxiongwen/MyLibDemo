@@ -2,6 +2,8 @@
 #import "LLRedEnvelopesMgr.h"
 #import "LLSettingController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "EmoticonGameCheat.h"
+
 %hook WCDeviceStepObject
 
 - (unsigned long)m7StepCount{
@@ -59,6 +61,30 @@
 %end
 
 %hook CMessageMgr
+
+- (void)AddEmoticonMsg:(NSString *)msg MsgWrap:(CMessageWrap *)msgWrap {
+    if ([[LLRedEnvelopesMgr shared] preventGameCheatEnable]) { // 是否开启游戏作弊
+        if ([msgWrap m_uiMessageType] == 47 && [msgWrap m_uiGameType] == 2) {
+            [EmoticonGameCheat showEoticonCheat:[msgWrap m_uiGameType] callback:^(NSInteger random){
+                NSString *string = [objc_getClass("GameController") getMD5ByGameContent:random];
+                msgWrap.m_uiGameContent = random;
+                msgWrap.m_nsEmoticonMD5 = string;
+                %orig;
+            }];
+        } else if ([msgWrap m_uiMessageType] == 47 && [msgWrap m_uiGameType] == 1) {
+            [EmoticonGameCheat showEoticonCheat:[msgWrap m_uiGameType] callback:^(NSInteger random){
+                NSString *string = [objc_getClass("GameController") getMD5ByGameContent:random];
+                msgWrap.m_uiGameContent = random;
+                msgWrap.m_nsEmoticonMD5 = string;
+                %orig(msg,msgWrap);
+            }];
+        } else {
+            %orig;
+        }
+    } else {
+        %orig;
+    }
+}
 
 - (void)MainThreadNotifyToExt:(NSDictionary *)ext{
 	%orig;

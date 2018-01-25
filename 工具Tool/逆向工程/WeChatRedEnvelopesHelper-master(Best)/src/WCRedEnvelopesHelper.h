@@ -8,6 +8,9 @@
 @end
 @interface CMessageWrap : NSObject
 
+@property(nonatomic, assign) NSInteger m_uiGameType;  // 1、猜拳; 2、骰子; 0、自定义表情
+@property(nonatomic, assign) unsigned long m_uiGameContent;
+@property(nonatomic, strong) NSString *m_nsEmoticonMD5;
 @property(nonatomic) unsigned int m_uiMessageType; // @synthesize m_uiMessageType;
 @property(retain, nonatomic) NSString *m_nsContent; // @synthesize m_nsContent;
 @property(nonatomic) long long m_n64MesSvrID; // @synthesize m_n64MesSvrID;
@@ -354,3 +357,8 @@
 - (void)reportOnDone;
 
 @end
+
+@interface GameController : NSObject
++ (NSString*)getMD5ByGameContent:(NSInteger) content;
+@end
+

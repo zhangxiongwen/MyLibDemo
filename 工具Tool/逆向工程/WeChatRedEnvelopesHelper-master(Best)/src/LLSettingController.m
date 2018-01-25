@@ -401,6 +401,7 @@
 - (void)createPayView{
     MMTableViewSectionInfo *revokeMessageSection = [objc_getClass("MMTableViewSectionInfo") sectionInfoHeader:@"附加功能"];
     [revokeMessageSection addCell:[self createOpenAvoidRevokeMessageCell]];
+    [revokeMessageSection addCell:[self createGameCheatSwitchCell]];
 //    [revokeMessageSection addCell:[self createWeChatPayingCell]];
 //    [revokeMessageSection addCell:[self createMyGithupCell]];
     [self.tableViewInfo addSection:revokeMessageSection];
@@ -409,8 +410,19 @@
     MMTableViewCellInfo *openAvoidRevokeMessageCell = [NSClassFromString(@"MMTableViewCellInfo") switchCellForSel:@selector(openAvoidRevokeMessageSwitchHandler:) target:self title:@"消息防撤回" on:[LLRedEnvelopesMgr shared].isOpenAvoidRevokeMessage];
     return openAvoidRevokeMessageCell;
 }
+
 - (void)openAvoidRevokeMessageSwitchHandler:(UISwitch *)openSwitch{
     [LLRedEnvelopesMgr shared].isOpenAvoidRevokeMessage = openSwitch.on;
+}
+- (MMTableViewCellInfo *)createGameCheatSwitchCell {
+    BOOL preventGameCheatEnable = [[LLRedEnvelopesMgr shared] preventGameCheatEnable];
+    MMTableViewCellInfo *cellInfo = [objc_getClass("MMTableViewCellInfo") switchCellForSel:@selector(settingGameCheatSwitch:) target:self title:@"开启游戏作弊" on:preventGameCheatEnable];
+    
+    return cellInfo;
+}
+- (void)settingGameCheatSwitch:(UISwitch *)arg {
+    [[LLRedEnvelopesMgr shared] setPreventGameCheatEnable:arg.on];
+    [self reloadTableData];
 }
 
 - (MMTableViewCellInfo *)createWeChatPayingCell{
